@@ -74,7 +74,7 @@ function getSource($type, $quality, $sources) {
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>Jscii</title>
+	<title>Ascii Youtube Video</title>
 	<style type="text/css">
 		html, body {
 			font: normal 12px/18px 'helvetica neue' arial;

@@ -63,7 +63,11 @@
 					el.src = (window.URL || window.webkitURL).createObjectURL(localMediaStream);
 				}, logError);
 			}
-			el.addEventListener('loadeddata', function() { self.play(); });
+			el.addEventListener('loadeddata', function() {
+				//$.get("/delete_mp4.php?num=" + num, function(){
+					self.play();
+				//});
+			});
 		}
 	}
 
@@ -117,7 +121,7 @@
 		if(!width || !height) return;
 
 		this.ctx.drawImage(this.el, 0, 0, width, height);
-		this.imageData = this.ctx.getImageData(0, 0, width, height).data;
+		this.imageData = this.ctx.getImageData(0, 0, width, height).data; // Uncaught SecurityError: Failed to execute 'getImageData' on 'CanvasRenderingContext2D': The canvas has been tainted by cross-origin data.
 		var asciiStr = this.getAsciiString();
 		if(this.container) this.container.innerHTML = asciiStr;
 		if(this.fn) this.fn(asciiStr);
